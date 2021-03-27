@@ -35,7 +35,8 @@ namespace CommandAPI
             services.AddControllers();
 
             //Added by me
-            services.AddScoped<ICommandAPIRepo, MockCommandAPIRepo>();
+            //services.AddScoped<ICommandAPIRepo, MockCommandAPIRepo>(); //Old use of the Mock Repository Implementation
+            services.AddScoped<ICommandAPIRepo, SqlCommandAPIRepo>(); //New Repository Implementation
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
